@@ -17,7 +17,7 @@ CutPointSubSystem::CutPointSubSystem(){
 }
 
 
-CutPointSubSystem::CutPointSubSystem(std::string fname,int cpCnt) throw(InvalidFileExcp){
+CutPointSubSystem::CutPointSubSystem(std::string fname,std::string cpCnt) throw(InvalidFileExcp){
 
 	std::ifstream ifile(fname);
 	std::string tmpStr;
@@ -34,13 +34,15 @@ CutPointSubSystem::CutPointSubSystem(std::string fname,int cpCnt) throw(InvalidF
 	else{
 		throw(InvalidFileExcp(fname));
 	}
-	desiredCutPtCnt = cpCnt;
+
+	desiredCutPtCnt = std::stoi(cpCnt);
 
 	std::set<int>::iterator it;
 	int iCnt=0;
 	for(it = dataItemSet.begin();it != dataItemSet.end();it++,iCnt++)
 		std::cout << "dataItemSet # " << iCnt << ": " << *it << "\n";
 
+	std::cout << "desiredCutPtCnt: " << desiredCutPtCnt << "\n";
 }
 
 

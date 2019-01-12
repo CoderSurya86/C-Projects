@@ -36,7 +36,7 @@ CutPointSubSystem();
  * @post  : Private data member(s) initialized with data passed as arguments.   *                                                        *
  * @return: None.                                                               *
  ********************************************************************************/
-CutPointSubSystem(std::string fname,int cpCnt) throw(InvalidFileExcp);
+CutPointSubSystem(std::string fname,std::string cpCnt) throw(InvalidFileExcp);
 
 
 /*************************************************************************

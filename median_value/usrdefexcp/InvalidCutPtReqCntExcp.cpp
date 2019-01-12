@@ -1,13 +1,13 @@
 /*********************************************************************************
- * Filename    : InvalidFileExcp.cpp                                             *
+ * Filename    : InvalidCutPtReqCntExcp.cpp                                      *
  * Date created: Jan 12, 2019                                                    *
  * Author      : Surya Tej Nimmakayala                                           *
  * Description : Contains implementation of the public constructor method in the *
- *               exception class InvalidFileExcp.                                *
+ *               exception class InvalidCutPtReqCntExcp.                         *
  *********************************************************************************/
 
-#include "InvalidFileExcp.h"
+#include "InvalidCutPtReqCntExcp.h"
 
-InvalidFileExcp::InvalidFileExcp(std::string msg):runtime_error("\nInvalidFileExcp: File "+msg+" not found !\n\n"){
+InvalidCutPtReqCntExcp::InvalidCutPtReqCntExcp(std::string msg):runtime_error("\nInvalidCutPtReqCntExcp: "+msg+"!\n\n"){
 
 }

@@ -14,13 +14,17 @@
 #include <set>
 #include <string>
 #include "../usrdefexcp/InvalidFileExcp.h"
+#include "../usrdefexcp/ImpossibleCutPtReqExcp.h"
+#include "../usrdefexcp/InvalidCutPtReqCntExcp.h"
 
 class CutPointSubSystem{
 
 private:
-std::set<int> dataItemSet;
-int desiredCutPtCnt;
-
+ int* sortedDataItemList;
+ int desiredCutPtCnt;
+ int dataItemListLength;
+ std::set<int> cutPtSet;
+ 
 public:
 
 /***************************************************************************
@@ -33,19 +37,31 @@ CutPointSubSystem();
 
 /********************************************************************************
  * @pre   : Appropriate input filename and cut-point count passed as arguments. *
- * @post  : Private data member(s) initialized with data passed as arguments.   *                                                        *
+ * @post  : Private data member(s) initialized with data passed as arguments.   *
  * @return: None.                                                               *
  ********************************************************************************/
 CutPointSubSystem(std::string fname,std::string cpCnt) throw(InvalidFileExcp);
 
 
 /*************************************************************************
- * @pre   : Private data member dataItemSet initialized with input data. *
+ * @pre   : Private data member sortedDataItemList initialized with      *
+ *          input data.                                                  *
  * @post  : None.                                                        *
  * @return: void.                                                        *
  *************************************************************************/
 void run();
 
+ 
+/*************************************************************************
+ * @pre   : None.                                                        *
+ * @post  : Any heap-allocated memory at run-time is released through    *
+ *          "delete" operator.                                           *
+ * @return: None.                                                        *
+ *************************************************************************/
+ ~CutPointSubSystem();
+ 
+ 
+ 
 };
 
 
